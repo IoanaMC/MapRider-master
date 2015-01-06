@@ -1,0 +1,27 @@
+<html ng-app="SkiApp">
+    <head>
+        <title>Disertatie</title>
+    </head>
+
+    <body ng-controller="MainCtrl">
+
+        <div>
+            <span>Lat: {{coordX}}</span>
+            <span>Long: {{coordY}}</span>
+        </div>
+
+        <div>
+            <div>Locatii</div>
+            <select ng-model="selectedOption" ng-change="getPlaces()">
+                <option ng-repeat="option in options" value="{{option}}">{{option}}</option>
+            </select>
+        </div>
+
+        <div>
+            <div>Rezultat</div>
+            <div ng-repeat="venue in venuesList">{{venue.name}}</div>
+        </div>
+        <script src="libraries/angular/angular.min.js"></script>
+        <script src="app/app.js"></script>
+    </body>
+</html>
